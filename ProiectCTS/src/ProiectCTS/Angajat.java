@@ -10,4 +10,6 @@ public class Angajat {
 		this.CNP = CNP;
 		this.nrTelefon = nrTelefon;
 	}
+	
+	//Test
 }
