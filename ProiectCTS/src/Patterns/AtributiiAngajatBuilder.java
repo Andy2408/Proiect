@@ -1,4 +1,4 @@
-package ProiectCTS;
+package Patterns;
 
 public class AtributiiAngajatBuilder implements IAtributiiAngajatBuilder {
 	AtributiiAngajat atributii;

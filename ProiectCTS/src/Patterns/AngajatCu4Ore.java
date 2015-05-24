@@ -1,4 +1,4 @@
-package ProiectCTS;
+package Patterns;
 
 public class AngajatCu4Ore extends Angajat{
 
