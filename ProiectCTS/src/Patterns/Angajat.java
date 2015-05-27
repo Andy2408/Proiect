@@ -1,8 +1,14 @@
 package Patterns;
 
+import java.util.List;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.ArrayList;
+
+import Exceptions.EroareSoldException;
+import Exceptions.SalariuPreaMareException;
+import Exceptions.SalariuPreaMicException;
 
 
 
@@ -11,11 +17,14 @@ public  class Angajat implements IAngajat {
 	public String CNP;
 	public String nrTelefon;
 	public String email;
+	private double salariuAngajat;
+	private List<Angajat> subalterni;
+	public String departament;
 	
 	public Angajat() {
 		super();
 	}
-
+	
 	public Angajat(String nume, String CNP, String nrTelefon) {
 		this.nume = nume;
 		this.CNP = CNP;
@@ -28,6 +37,57 @@ public  class Angajat implements IAngajat {
 		this.nrTelefon = nrTelefon;
 		this.email=email;
 	}
+	
+	public Angajat(String nume, String departament) {
+		this.nume = nume;
+		this.departament=departament;
+		subalterni = new ArrayList<Angajat>();
+	}
+	
+	public Angajat(double s) {
+		this.salariuAngajat = s;
+	}
+
+	public String getNume() {
+		return nume;
+	}
+
+	public void setNume(String nume) {
+		this.nume = nume;
+	}
+
+	public String getCNP() {
+		return CNP;
+	}
+
+	public void setCNP(String cNP) {
+		CNP = cNP;
+	}
+
+	public String getNrTelefon() {
+		return nrTelefon;
+	}
+
+	public void setNrTelefon(String nrTelefon) {
+		this.nrTelefon = nrTelefon;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public double getSalariuAngajat() {
+		return salariuAngajat;
+	}
+
+	public void setSalariuAngajat(double salariuAngajat) {
+		this.salariuAngajat = salariuAngajat;
+	}
+
 	
 	public static boolean isCorrectNrTel(Angajat angajat)
 	{
@@ -90,7 +150,34 @@ public  class Angajat implements IAngajat {
 
     return isValidEmail;
 	}
+	
+	public void marireSalariu() throws SalariuPreaMareException {
+		setSalariuAngajat(this.getSalariuAngajat() + 100);
+		if(salariuAngajat > 3000)
+			throw new SalariuPreaMareException();
+	}
+	
+	public void taiereSalariu() throws SalariuPreaMicException {
+		setSalariuAngajat(this.getSalariuAngajat() - 100);
+		if(salariuAngajat < 600)
+			throw new SalariuPreaMicException();
+	}
+	
+	public void adauga(Angajat a) {
+		subalterni.add(a);
+	}
 
+	public void sterge(Angajat a) {
+		subalterni.remove(a);
+	}
+
+	public List<Angajat> getSubalterni(){
+		return this.subalterni;
+	}
+	
+	public String toString(){
+	      return ("Angajat :[ Nume : " + nume + ", Departament : " + departament + " ]");
+	   }   
 	
 	//Test
 	

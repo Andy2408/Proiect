@@ -24,6 +24,39 @@ public class Test {
 		Angajat a2 = factory.getAngajat(Angajati.cu8ore);
 		a2.oreSuplimentare();
 		//~~~~~~~~End Factory~~~~~~~~
+		
+		// ~~~~~~~~Composite~~~~~~~~
+		Angajat CEO = new Angajat("Andy","CEO");
+
+		Angajat bucatarSef = new Angajat("Robert","Bucatar Sef");
+
+		Angajat chelnerSef = new Angajat("Andrei","Chelner Sef");
+
+		Angajat bucatar1 = new Angajat("Laura","bucatar");
+		Angajat bucatar2 = new Angajat("Bogdan","bucatar");
+
+		Angajat chelner1 = new Angajat("Liviu","chelner");
+		Angajat chelner2 = new Angajat("Mihai","chelner");
+
+		CEO.adauga(bucatarSef);
+		CEO.adauga(chelnerSef);
+
+		bucatarSef.adauga(bucatar1);
+		bucatarSef.adauga(bucatar2);
+
+		chelnerSef.adauga(chelner1);
+		chelnerSef.adauga(chelner2);
+
+		System.out.println(CEO); 
+
+		for (Angajat sefii : CEO.getSubalterni()) {
+			System.out.println(sefii);
+
+			for (Angajat ang : sefii.getSubalterni()) {
+				System.out.println(ang);
+			}
+		}		
+		//~~~~~~~~End Composite~~~~~~~~
 	}
 
 }

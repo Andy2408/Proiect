@@ -1,7 +1,7 @@
 package Patterns;
 
 public class AtributiiAngajat {
-	String conduceClientii;
+	 String conduceClientii;
 	 String aduceMeniul;
 	 String preiaComanda;
 	 String aduceComanda;

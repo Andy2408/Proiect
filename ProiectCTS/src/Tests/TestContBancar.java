@@ -12,6 +12,12 @@ public class TestContBancar extends TestCase {
 		cont = new ContBancar(100);
 	}
 	
+	//scop strict didactic
+	public void tearDown()  {
+		System.out.println("tearDown");
+		cont= new ContBancar(0);
+	}
+
 	public void testNormalValuesPrimesteSalariul() throws EroareSoldException {
 		
 		double expected = 1100;
