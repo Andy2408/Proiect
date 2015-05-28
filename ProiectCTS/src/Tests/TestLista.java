@@ -18,6 +18,7 @@ public class TestLista extends TestCase {
 		assertEquals("Testare adauga angajat",d.getLista().size(), 2);
 	}
 	
+	
 	public void testEliminaAngajat() throws NuExistaAngajatException {
 		Departament d = new Departament();
 		try{

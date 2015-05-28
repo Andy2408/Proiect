@@ -9,12 +9,12 @@ Angajat angajat;
 	
 	public void testNormalValues() throws Exception
 	{
-		assertTrue("Verificare cu valori normale email",angajat.isCorrectEmail("asd@yahoo.com"));			
+		assertTrue("Verificare cu valori normale email",Angajat.isCorrectEmail("asd@yahoo.com"));			
 	};
 	
 	public void testDoubleAt() throws Exception
 	{
-		assertFalse("Verificare dublu @",angajat.isCorrectEmail("as.@@gmail.com"));			
+		assertFalse("Verificare dublu @",Angajat.isCorrectEmail("as.@@gmail.com"));			
 	};
 	
 	public void testDoubleCom() throws Exception

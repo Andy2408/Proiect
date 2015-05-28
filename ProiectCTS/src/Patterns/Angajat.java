@@ -118,6 +118,17 @@ public  class Angajat implements IAngajat {
     	return false;
     }
 	
+	public static boolean isCorrectCNP2(String s){
+		if(s.length() != 13){
+			return false;
+		}
+		
+    	if(s.charAt(0) =='1' || s.charAt(0) =='2' || s.charAt(0) =='5' || s.charAt(0) =='6')
+    		return true;
+    	else    	
+    	return false;
+    }
+	
 
 	@Override
 	public void oreSuplimentare() {

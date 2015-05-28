@@ -1,7 +1,12 @@
 package Tests;
 
-import Patterns.Angajat;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+
 import junit.framework.TestCase;
+import Patterns.Angajat;
 
 public class TestCNP extends TestCase {
 	Angajat angajat;
@@ -42,7 +47,26 @@ public class TestCNP extends TestCase {
 		assertFalse("Verificare CNP < 13 caractere",angajat.isCorrectCNP(angajat));			
 	};
 	
-	
+	public  void testCitire(){
+		ArrayList<String>listaCnp = new ArrayList<String>();
 
-
+		try {
+			FileReader fr;
+			fr = new FileReader("CNP.txt");
+			BufferedReader in = new BufferedReader(fr);
+			String str;
+			while((str = in.readLine())!=null){
+				String c[]= str.split(",");			
+				for(int i = 0; i<c.length;i++)
+					listaCnp.add(c[i]);
+			}
+		}
+		catch (Exception e){
+			System.out.println("Eroare");
+		}
+		for(String s : listaCnp){
+			assertTrue(angajat.isCorrectCNP2(s));
+			System.out.println(s); 
+	}  
+	}
 }

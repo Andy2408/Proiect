@@ -13,14 +13,14 @@ public class TestNrTelefon extends TestCase {
 	
 	public void testNormalValues() throws Exception
 	{
-		angajat = new Angajat("Andrei", "1930521090025", "0720104560");
-		assertTrue("Verificare cu valori normale",angajat.isCorrectNrTel(angajat));			
+		Angajat angajat = new Angajat("Andrei", "1930521090025", "0720104560");
+		assertTrue("Verificare cu valori normale",Angajat.isCorrectNrTel(angajat));			
 	};
 	
 	public void testFirstNumberNot0() throws Exception
 	{
-		angajat = new Angajat("Andrei", "1930521090025", "7720104560");
-		assertFalse("Verificare primul numar diferit de 0",angajat.isCorrectNrTel(angajat));			
+		Angajat angajat = new Angajat("Andrei", "1930521090025", "7720104560");
+		assertFalse("Verificare primul numar diferit de 0",Angajat.isCorrectNrTel(angajat));			
 	};
 	
 	public void testContainsLetters() throws Exception
