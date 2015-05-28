@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 public class TestEmail extends TestCase {
 	
 Angajat angajat;
-	
+
 	public void testNormalValues() throws Exception
 	{
 		assertTrue("Verificare cu valori normale email",Angajat.isCorrectEmail("asd@yahoo.com"));			
